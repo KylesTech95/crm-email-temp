@@ -1,257 +1,228 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"></html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Template</title>
     <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
-        body {
-            margin: 0;
-            overflow:hidden;
-        }
-        table {
-            border-spacing: 0;
-        }
-        .display-justify-end{
-            display:flex;
-            flex-direction: column;
-            align-items: end;
-            justify-content: end;
-        }
-        .cta{
-            padding:10px 16px;
-            cursor:pointer;
-            border-radius: 12px 0 12px 0;
-            background:rgb(24, 24, 105);
-            color:ghostwhite;
-            font-size:16px;
-            border:none;
-            transition:.5s;
-            margin: 1rem 0 2rem 0;
-            filter: drop-shadow(0 0 4px #4444dd);
-
-        }
-        .cta:active{
-            background:blue;
-            transition:.25s;
-        }
-        td {
-            padding: 0;
-        }
-        img {
-            border: 0;
-        }
-        .wrapper {
-            width: 100%;
-            height:100vh;
-            table-layout: fixed;
-            background-color: #adc9a3;
-            padding-bottom: 60px;
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .main {
-            width: 100%;
-            max-width:600px;
-            background-color: #fff;
-            font-family: sans-serif;
-            color: #4a4a4a;
-            box-shadow: 0 0 25px rgba(0, 0, 0, .15);
-            text-align: center;
-            height:600px;
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
       
-        h3 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 28px;
-        }
-        .display-justify-start{
-            width:100%;
-            height:100%;
-            display:flex;
-            flex-direction: column;
-            align-items: start;
-            padding-left:1.5rem;
-            justify-content: center;
-        }
-        .key{
-            fill:rgb(255, 255, 255) !important;
-            stroke: rgb(255, 255, 255);
-            stroke-width: 35px;
-            height:100px;
-            width:100px;
-            animation: rotate 1s .5s forwards ease-out;
-        }
-        @keyframes rotate {
-            from{
-                transform:rotate(0deg);
-            }
-            to{
-                transform:rotate(20deg);
-            }
-        }
+      body {
+        margin: 0;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        font-family: 'Roboto Condensed', sans-serif;
+        height:10vh;
+        width:100%;
+      }
+      .header-container{
+        padding:.5rem;
+      }
+      p{
+        line-height:1.25rem;
+      }
+      .info-para{
+        height:100%;
+        width:100%;
+        background:#2b2e33;
+        opacitY:.88;
+      }
 
-        .display-column{
-            width:100%;
-            height:100%;
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-        }
-      
-        h4 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 22px;
-        }
-       
-#verification-header{
-    text-decoration:uppercase;
-}
-
+      img{
+        width:100%;
+        height:100%;
+        background-position:center;
+        background-size:contain;
+      }
+      td.hr{
+       background:transparent;
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+      }
+      hr.hr-class{
+        margin:0 auto;
+        border:none;
+        background:#fff;
+        width:50%;
+        padding:.75px;
+        border-radius:12px;
+      }
+      .wrapper {
+        padding:2rem 0;
+        width: 100%;
+        height: 100vh;
+        table-layout: fixed;
+        background-color: #adc9a3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .columns-4 {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .center-table {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .learn-more{
+        color:#fff;
+        background:#000;
+        width:100%;
+        cursor:pointer;
+        padding-left:1rem;
+      }
+      .columns-2{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        overflow:hidden;
+        color:#fff;
+      }
     </style>
-</head>
-    <!-- tables are widely supported by email clients -->
-<body>
+  </head>
+  <!-- tables are widely supported by email clients -->
+  <body>
     <center class="wrapper">
-        <table class="main" width="100%">
-
-
-<!--BORDER-->
-<tr>
-    <td height="8" style="background-color: #000;">
-    </td>
-</tr>
-
-<!-- BORDER -->
-<tr>
-    <td height="2" style="background-color: #000;">
-    </td>
-</tr>
-
-<!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"/></svg> -->
-
-<!-- HEADER/BANNER -->
-<tr style="width:100%;height:75px;">
-    
-    <td style="position:relative; height:inherit;width:inherit;background:#2b2e33;opacity:.88;" class="display-column">
-        <h4 style="color:#fff;position:absolute;top:15px;left:20px;">Applebit</h4>
-        <table>
-            <tr>
-                <td>
-                    <svg class="key key-icon icon-key" height="56px" viewBox="0 -960 960 960" width="56px" fill="#ffffff"><path d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"/></svg>
-                </td>
-            </tr>
-        </table>
-    </td>
-</tr>
-
-
-<!-- BORDER -->
-<tr>
-    <td height="2" style="background-color: #000;">
-    </td>
-</tr>
-
-<!-- COLUMN SECTION-->
-<tr>
-    <td>
-        <table width="100%">
-
-            <tr>
-                <td class="three-columns">
-
-                    <table class="column">
-
-                        <tr>
-                            <td class="padding">
-
-                                <table class="content">
-                                    </tr>
-
-                                    <tr class="display-column">
-                                        <td  class='display-justify-start'>
-                                            <h4 id="verification-header">Email Verification</h4>
-                                        </td>
-                                        <td style="padding: 0 1rem;position:relative;">
-                                            <p style="width:inherit">
-                                                Hi [name],
-We just need to verify your email address before you can access [customer portal].
-
-Verify your email address [verification link]
-
-Thanks! – The [company] team
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-        </table>
-    <!-- BUTTON/CALL_TO_ACTION (CTA) -->
-                    <table width="100%">
-                        <tr>
-                            <td><button class="cta button-cta cta-btn">Secure Account</button></td>
-                        </tr>
-                        <tr class="display-column" style="margin: 0 0 1.5rem 0">
-                            <td style="margin:-.75rem 0 -.5rem 0">
-                                <em>
-                                    <p>Or paste this link into your browser.</p>
-                                </em>
-
-                            </td>
-                            <td>
-                                <a href="https://github.com/KylesTech95/crm-email-temp/tree/email-verification" target="_blank">
-                                    alternative link to click
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        
-
-
-
-        </table>
-    </td>
-</tr>
-
-<!--BORDER-->
-<tr>
-    <td height="2" style="background-color: #000;"></td>
-</tr>
-
-
-<!--FOOTER-->
-<tr>
-    <td style="background-color: #2b2e33;opacity:.88; color: #fff;">
-        <table width="100%">
-
-            <tr class="display-justify-end">
-                <td style="padding: 8px" class="display-justify-end">
-                    <!-- <a href="#"><img src="https://i.ibb.co/NLSS9YJ/Shiny-red-apple-svg.png" alt="red apple" title="logo" width="60px"></a> -->
-                    <p style="margin:.25rem -.025rem">AppleBit Email Template</p>
-                    <p style="margin:.25rem -.025rem">123 Streed Road, City, State 01234</p>
-                </td>
-            </tr>
-        </table>
+      <table
+        style="
+          width: 100%;
+          max-width: 600px;
+        "
+      >
+      <!-- BORDER -->
+      <tr>
+        <td height="8" style="background-color: #000"></td>
+      </tr>
+        <!-- HEADER/BANNER -->
         <tr>
-            <td height="10" style="background-color: #000;"></td>
+          <td>
+            <table style="background:#2b2e33;color:#fff;opacity:.88;height:100%">
+              <tr class="columns-2 header-container">
+                <td class="td column-actual">
+                  <h1 style="text-transform: uppercase; height:65px;width:100px;color:orangered;">Weekly Newsletter</h1>
+                </td>
+                <td class="hr">
+                    <hr class="hr-class">
+                </td>
+                <td class="td column-actual">
+                  <p >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Dolorem optio quia eos sunt vitae architecto alias qui
+                    possimus reprehenderit explicabo itaque, error atque nobis
+                    quod voluptate nam laudantium! Illum vero laborum expedita
+                    omnis iure accusamus officiis facere laboriosam optio
+                    inventore consectetur quis, placeat dolore eligendi.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
         </tr>
-    </td>
-</tr>
+        <!-- BORDER -->
+        <tr>
+          <td height="2" style="background-color: #000"></td>
+        </tr>
 
-        </table><!--END MAIN CLASS-->
+        <!-- CONTENT -->
+        <tr style="background: #fff;">
+          <td>
+            <table class="center-table">
+              <tr class="columns-4">
+                <td class="content-container info-para">
+                  <table style="height:100%;">
+                    <tr class="columns-2">
+                      <td style="overflow:hidden; padding:0 .5rem;">
+                        <h3>Lorem ipsum dolor sit amet.</h3>
+                        <p style="height:100px;width:100%;overflow-y:scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam sapiente consequatur quo sint quod repellendus ut, tempore veritatis esse ex.</p>
+                      </td>
+                      <td class="learn-more">
+                        <p>Learn More</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td class="content-container">
+                  <table>
+                   
+                        <img
+                          src="./media/school.png"
+                          alt=""
+                        />
+                      
+                  </table>
+                </td>
+                <td class="content-container">
+                  <table>
+                   
+                        <img
+                          src="./media/coffee.jpg"
+                          alt=""
+                        />
+                      
+                  </table>
+                </td>
+                <td class="content-container info-para">
+                  <table style="height:100%;">
+                    <tr class="columns-2">
+                      <td style="overflow:hidden; padding:0 .5rem;">
+                        <h3>Lorem ipsum dolor sit amet.</h3>
+                        <p style="height:100px;width:100%;overflow-y:scroll">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque quaerat sint suscipit, voluptas aperiam, facere voluptatem id quia voluptatum consequuntur enim libero doloribus esse architecto iusto odio necessitatibus culpa ducimus debitis laborum beatae. Fugiat molestiae, possimus dignissimos odit id nostrum totam ducimus voluptatum beatae ipsam?</p>
+                      </td>
+                      <td class="learn-more">
+                        <p>Learn More</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!--BORDER-->
+        <tr>
+          <td height="2" style="background-color: #000"></td>
+        </tr>
 
-    </center><!--END WRAPPER-->
-</body>
-
+        <!--FOOTER-->
+        <tr>
+          <td style="background-color: #2b2e33; opacity: 0.88; color: #fff">
+            <table width="100%">
+              <tr class="display-justify-end">
+                <td style="padding: 8px" class="display-justify-end">
+                  <!-- <a href="#"><img src="https://i.ibb.co/NLSS9YJ/Shiny-red-apple-svg.png" alt="red apple" title="logo" width="60px"></a> -->
+                  <p style="margin: 0.25rem -0.025rem">
+                    AppleBit Email Template
+                  </p>
+                  <p style="margin: 0.25rem -0.025rem">
+                    123 Streed Road, City, State 01234
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <tr>
+              <td height="10" style="background-color: #000"></td>
+            </tr>
+          </td>
+        </tr>
+      </table>
+      <!--END MAIN CLASS-->
+    </center>
+    <!--END WRAPPER-->
+  </body>
 </html>
