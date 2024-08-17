@@ -10,9 +10,9 @@
     justify-content: center;
   "
 >
-  <h3>Email Verification</h3>
-  <img src="./media/email-ver.png" alt=""/>
-  <a style="font-size:16px;margin-top:12px;text-decoration:none;" href="https://github.com/KylesTech95/crm-email-temp/tree/email-verification">Link to Branch</a>
+  <h3>Password Reset</h3>
+  <img src="./public/media/passwordReset.png" alt=""/>
+  <a style="font-size:16px;margin-top:12px;text-decoration:none;" href="https://github.com/KylesTech95/crm-email-temp/tree/password-reset">Link to Branch</a>
 
   <hr style="width:75%;border:none;background:#fff; margin:1rem auto;"/>
 </div>
