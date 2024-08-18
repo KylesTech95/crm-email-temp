@@ -25,6 +25,13 @@ fastify.get('/reference',async (req,rep)=>{
   rep.type('text/html').send(stream)
   })
 
+  fastify.get('/html-file',(req,rep)=>{
+    let readFile = fs.readFileSync(path.resolve(__dirname,'../public/index.html'),'utf-8')
+    let file = path.resolve(__dirname,'../public/index.html')
+    let data =  Buffer.from(readFile,'utf-8')
+    rep.type('text/html').send(data)
+  })
+
 fastify.listen(PORT, (err, address) => {
   return err ? console.log(err) : console.log("Listening on port " + address);
 });
