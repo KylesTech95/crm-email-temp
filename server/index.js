@@ -43,6 +43,23 @@ fastify.get("/html-file", (req, rep) => {
   rep.type("text/html").send(data);
 });
 
+// json params
+fastify.get('/api/json/:subject',(req,rep)=>{
+  const {subject} = req.params;
+  const subjects = ['history','band','PE','science','math','Computer Science']
+  let subjectConfirmed = (subjects.includes(subject)||(subjects.indexOf(subject)!=-1))
+  try{
+    if(!subjectConfirmed){
+      rep.type('text/html').send('Subject is not found. Try again<br><a href="/">Main</a>')
+    }
+    else{
+      rep.code(200).header('Content-Type','application/json','charset=utf-8').send({sub:subject});
+    }
+  }
+  catch(err){
+    throw err
+  }
+})
 // listen on server
 fastify.listen(PORT, (err, address) => {
   return err ? console.log(err) : console.log("Listening on port " + address);
