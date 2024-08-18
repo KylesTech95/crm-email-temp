@@ -40,6 +40,7 @@
 >
   <h3>Declare routes</h3>
   <img src="./media/three.png" alt=""/>
+  <img src="./media/five.png" alt=""/>
 
   <hr style="width:75%;border:none;background:#fff; margin:1rem auto;"/>
 </div>
