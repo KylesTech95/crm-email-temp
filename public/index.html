@@ -13,6 +13,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        text-decoration: none;
       }
       .flex-column-center {
         display: flex;
@@ -20,9 +21,22 @@
         align-items: center;
         justify-content: center;
       }
+      .flex-column-end {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+      }
+      .flex-row-center-start {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        gap: 4px;
+      }
 
       body {
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: "Roboto Condensed", sans-serif;
         background: silver;
         height: 100vh;
         width: 100%;
@@ -33,39 +47,25 @@
         height: 100%;
         table-layout: fixed;
       }
-      .card-container {
-        height: 90%;
-        width: 100%;
-        max-width: 500px;
-        border: 3px solid #fff;
-        border:8px double #000;
-        position:relative;
-        overflow:hidden;
 
-      }
-      .message-container{
-        border:2px solid orange;
-        height:100%;
-        background:#fff;
-      }
-      img{
-        z-index:999;
-        transform:rotate(180deg);
-        opacity:.9;
-        top:-150px;
-        width:100%;
-        position:absolute;
-        left:0;
-        border:.25rem solid lavender;
-        filter:brightness(1) contrast(1.25) blur(1.5px) saturate(.9);
-        animation:noblur 1075ms ease-in forwards;
+      img {
+        z-index: 999;
+        transform: rotate(180deg);
+        opacity: 0.9;
+        top: -150px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        border: 0.25rem solid lavender;
+        filter: brightness(1) contrast(1.25) blur(1.5px) saturate(0.9);
+        animation: noblur 1075ms ease-in forwards;
       }
       @keyframes noblur {
-        from{
-          filter:brightness(1) contrast(1.25) blur(1.5px) saturate(.9);
+        from {
+          filter: brightness(1) contrast(1.25) blur(1.5px) saturate(0.9);
         }
-        to{
-          filter:brightness(1.15) contrast(1.75) blur(0) saturate(1.10);
+        to {
+          filter: brightness(1.15) contrast(1.75) blur(0) saturate(1.1);
         }
       }
     </style>
@@ -74,23 +74,97 @@
   <body class="flex-column-center">
     <center class="wrapper flex-column-center">
       <!-- CARD -->
-      <table class="card-container">
+      <table
+        style="
+          border: 4px double #333;
+          overflow: hidden;
+          height: 600px;
+          width: 500px;
+          position: relative;
+          background:#a2bbc0aa;
+        "
+      >
+        <!-- image banner -->
         <tr>
           <td>
-            <img height="400" src="./media/flowers2.jpg" alt="">
+            <table
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 200px;
+              "
+            >
+              <img height="400" src="./media/flowers2.jpg" alt="" />
+            </table>
           </td>
         </tr>
-
-        <tr style="height:200px;">
-          <td style="text-align: center;width:100%;">
-            <h2 style="color:rgb(0, 87, 117)">Happy Birthday from Lorem ipsum.</h2>
-            <hr style="width:90%;border:none;padding:.25px;margin:1rem auto;background:#fff;border-radius:12px;">
+        <!-- birthday header -->
+        <tr>
+          <td style="height: 125px">
+            <table>
+              <h2 style="color: #000; text-align: center">
+                Happy Birthday from Lorem ipsum.
+              </h2>
+              <hr
+                style="
+                  width: 90%;
+                  border: none;
+                  padding: 0.25px;
+                  margin: 1rem auto;
+                  background: #fff;
+                  border-radius: 12px;
+                "
+              />
+            </table>
           </td>
         </tr>
-
-        <tr style="height:200px;">
+        <!-- birthday message -->
+        <tr>
+          <td style="height: 200px; width: 100%;">
+            <table>
+              <p
+                class="birthday-message message-birthday;"
+                style="
+                  margin: 0 auto 2rem auto;
+                  line-height: 1.75rem;
+                  color: #000;
+                  text-align: center;
+                  width:420px;
+                  font-size: 18px;
+                  font-weight: bold;
+                "
+              >
+                Cheers!<br /><br />
+                To honor your special day, we're giving you <b style="color:#f00">15% off everything</b>
+                in-store and online. This offer is valid until [week from
+                birthdate].
+              </p>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- disclaimer -->
+      <table style="width: 450px; margin: 1rem 0">
+        <tr>
           <td>
-            <p class="birthday-message message-birthday">Happy Birthday! To honor your spcial day, we're giving you 15% off everything in-store and online. This office is valid until [week from birthdate].</p>
+            <em
+              ><p style="font-size: 12px">
+                This email was sent to [email address] because you've subscribed
+                to our site or made a purchase.
+              </p></em
+            >
+          </td>
+        </tr>
+      </table>
+      <!-- login/unsubscribe -->
+      <table style="width: 450px">
+        <tr>
+          <td class="flex-row-center-start">
+            <a href="" style="color: #000; font-size: 12px">login</a>
+            |
+            <a href="" style="color: #000; font-size: 12px">Unsubscribe</a>
           </td>
         </tr>
       </table>
@@ -98,3 +172,13 @@
     <!--END WRAPPER-->
   </body>
 </html>
+
+<!-- image -->
+<!-- <img height="400" src="./media/flowers2.jpg" alt=""> -->
+
+<!-- birthday header -->
+<!-- <h2 style="color:rgb(0, 87, 117)">Happy Birthday from Lorem ipsum.</h2>
+ <hr style="width:90%;border:none;padding:.25px;margin:1rem auto;background:#fff;border-radius:12px;"> -->
+
+<!-- birthday message -->
+<!-- <p class="birthday-message message-birthday">Happy Birthday! To honor your spcial day, we're giving you 15% off everything in-store and online. This office is valid until [week from birthdate].</p> -->
