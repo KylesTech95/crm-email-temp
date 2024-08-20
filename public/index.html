@@ -1,11 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body style="background:blue">
-<h1 style="color:#fff">Index Page</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"
+      rel="stylesheet"
+    />
+    <title>CreativeKitty</title>
+  </head>
+
+  <style>
+    .para,
+    h3 {
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .para {
+      line-height: 1.25rem;
+      text-align: center;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    center {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #wrapper {
+      width: 500px;
+      height: 600px;
+      border: 4px solid green;
+      overflow: hidden;
+      position: relative;
+    }
+    .table-data-container-title {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+      background: pink;
+    }
+    .table-data-container-footer {
+      height: 75px;
+      width: 100%;
+      background: pink;
+
+      /* border: 4px solid indigo; */
+    }
+    .table-data-container-meat {
+      height: 400px;
+      width: 100%;
+      /* border: 4px solid yellow; */
+    }
+    .table-content-meat {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      margin-top: 1rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0 0.5rem;
+    }
+    .content-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      /* border: 4px solid red; */
+      width: 225px;
+    }
+    .table-data-container {
+      height: 150px;
+      width: 100%;
+      border: 4px solid indigo;
+    }
+
+    #glass-piece {
+      height: 100px;
+      width: 700px;
+      transform: rotate(-10deg);
+      position: absolute;
+      top: 0;
+      left: -20px;
+      background: rgba(255, 255, 255, 0.21);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(0.75px); /*blur*/
+      -webkit-backdrop-filter: blur(0.75px);
+      border: 1px solid rgba(46, 180, 87, 0.19);
+      animation: blurout 5s forwards infinite alternate;
+    }
+    @keyframes blurout {
+      from {
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(0.75px); /*blur*/
+        -webkit-backdrop-filter: blur(0.75px);
+      }
+      to {
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(0px); /*blur*/
+        -webkit-backdrop-filter: blur(0px);
+      }
+    }
+    button {
+      cursor: pointer;
+      width: 100%;
+      background: beige;
+      color: #333;
+      position: absolute;
+      bottom: 0;
+      height: 50px;
+      border: none;
+      border-top: 2px solid #33333357;
+      transition: 0.5s;
+    }
+    button:hover {
+      color: beige;
+      background: #333;
+      transition: 0.25s;
+    }
+
+    .kitty-title {
+      font-family: "Cedarville Cursive", cursive;
+      font-weight: 400;
+      letter-spacing: 1.25px;
+      font-style: normal;
+      font-size: 50px;
+    }
+    img {
+      height: 175px;
+      width: 100%;
+      box-shadow: 0 0 7px 2px rgb(117, 113, 113);
+      border: none;
+    }
+  </style>
+  <!-- off-pink color -->
+  <!-- flex column center the <center> element -->
+  <body
+    style="
+      background: rgba(255, 192, 203, 0.512);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+    "
+  >
+    <center>
+      <!-- wrapper -->
+      <table id="wrapper">
+        <!-- title -->
+        <tr>
+          <td class="td table-data-container-title">
+            <h1 class="kitty-title title">Creative Kitty</h1>
+          </td>
+        </tr>
+        <!-- glass piece -->
+        <td id="glass-piece"></td>
+
+        <!-- row2 -->
+        <tr>
+          <td class="table-data-container-meat">
+            <table class="content-table content table-content-meat">
+              <tr>
+                <td style="position:relative">
+                  <p class="para">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Cupiditate, expedita.
+                  </p>
+                  <button>start now</button>
+                </td>
+                <td class="content-container one">
+                  <img
+                    src="./media/coolcat.jpg"
+                    alt=""
+                    style="transform: skew(0deg, -2.5deg)"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="content-container three" style="margin-top:1.25rem;">
+                  <img
+                    src="./media/lookupca.jpg"
+                    alt=""
+                    style="transform: skew(5deg, -5deg)"
+                  />
+                </td>
+                <td style="position: relative">
+                  <p class="para">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Fugiat expedita non magni.
+                  </p>
+                  <button>learn more</button>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- row3 -->
+        <tr>
+          <td class="table-data-container-footer">
+            <table class="content-table content table-content">
+              <tr>
+                <td>
+                  <h3 style="padding-left:1rem;">Creative Kitty Inc</h3>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
 </html>
